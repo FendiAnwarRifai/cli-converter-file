@@ -4,9 +4,9 @@ var fs = require('fs')
 fs.readFile('my-file.log',"utf-8",function(err, data){
     const cek = data.split('\r\n')
     // console.log(Object.assign({}, cek))
-    const json = JSON.stringify(Object.assign({}, cek), null, 2 )
+    // const json = JSON.stringify(Object.assign({}, cek), null, 2 )
     // console.log(json)
-    fs.writeFile("data.json", json, function (err) {
+    fs.writeFile("data.json", data, function (err) {
         if (err) {
             return console.log(err);
         }
