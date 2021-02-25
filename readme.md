@@ -1,6 +1,6 @@
 <h1> CLI converter file.log to json or text(.txt)</h1>
 
-## Requirements
+### Requirements
 1. <a href="https://nodejs.org/en/download/">Node Js</a>
 
 ### Installation
