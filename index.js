@@ -50,13 +50,13 @@ if (process.argv[2].split('.').includes('log')) {
                 directory.push(lopping[i])
 
             }
-            dir = '.' + directory.join("/")
+            dir = directory.join("/")
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, {
                     recursive: true
                 });
             }
-            fs.writeFile('.' + location, JSON.stringify(thisData, null, 2), function (err) {
+            fs.writeFile(location, JSON.stringify(thisData, null, 2), function (err) {
                 if (err) {
                     return console.log(err);
                 }
@@ -79,20 +79,20 @@ if (process.argv[2].split('.').includes('log')) {
                 }
             }
 
-            const location = '/logs-json/logs.json'
+            const location = 'logs-json/logs.json'
             var lopping = location.split('/')
             var directory = []
             for (var i = 0; i < lopping.length - 1; i++) {
                 directory.push(lopping[i])
 
             }
-            dir = '.' + directory.join("/")
+            dir = directory.join("/")
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, {
                     recursive: true
                 });
             }
-            fs.writeFile('.' + location, JSON.stringify(thisData, null, 2), function (err) {
+            fs.writeFile(location, JSON.stringify(thisData, null, 2), function (err) {
                 if (err) {
                     return console.log(err);
                 }
@@ -109,13 +109,13 @@ if (process.argv[2].split('.').includes('log')) {
                 directory.push(lopping[i])
 
             }
-            dir = '.' + directory.join("/")
+            dir = directory.join("/")
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, {
                     recursive: true
                 });
             }
-            fs.writeFile('.' + location, data, function (err) {
+            fs.writeFile(location, data, function (err) {
                 if (err) {
                     return console.log(err);
                 }
@@ -123,20 +123,20 @@ if (process.argv[2].split('.').includes('log')) {
             })
         }
         else if (process.argv[3] === "-t" && process.argv[4] === "text" && !process.argv[5] && !process.argv[6]){
-                const location = '/logs-text/logs.text'
+                const location = 'logs-text/logs.txt'
                 var lopping = location.split('/')
                 var directory = []
                 for (var i = 0; i < lopping.length - 1; i++) {
                     directory.push(lopping[i])
 
                 }
-                dir = '.' + directory.join("/")
+                dir = directory.join("/")
                 if (!fs.existsSync(dir)) {
                     fs.mkdirSync(dir, {
                         recursive: true
                     });
                 }
-                fs.writeFile('.' + location, data, function (err) {
+                fs.writeFile(location, data, function (err) {
                     if (err) {
                         return console.log(err);
                     }
@@ -153,13 +153,13 @@ if (process.argv[2].split('.').includes('log')) {
                 directory.push(lopping[i])
 
             }
-            dir = '.' + directory.join("/")
+            dir = directory.join("/")
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, {
                     recursive: true
                 });
             }
-            fs.writeFile('.' + location, data, function (err) {
+            fs.writeFile(location, data, function (err) {
                 if (err) {
                     return console.log(err);
                 }
@@ -168,20 +168,20 @@ if (process.argv[2].split('.').includes('log')) {
         } 
         //default convert to text .txt
         else if (process.argv[2].split('.').includes('log') && !process.argv[3] && !process.argv[4] && !process.argv[5] && !process.argv[6]){
-            const location = '/logs-text/logs.text'
+            const location = 'logs-text/logs.txt'
             var lopping = location.split('/')
             var directory = []
             for (var i = 0; i < lopping.length - 1; i++) {
                 directory.push(lopping[i])
 
             }
-            dir = '.' + directory.join("/")
+            dir = directory.join("/")
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, {
                     recursive: true
                 });
             }
-            fs.writeFile('.' + location, data, function (err) {
+            fs.writeFile(location, data, function (err) {
                 if (err) {
                     return console.log(err);
                 }
