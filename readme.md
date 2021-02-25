@@ -18,7 +18,7 @@ npm install
 converter
 ```
 
-### default location
+### output default location
 1. json convert
 ```
 in folder logs-json/
