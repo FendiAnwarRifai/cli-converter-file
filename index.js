@@ -24,23 +24,7 @@ if (!process.argv[2] || process.argv[2].split('.').includes('log') === false || 
 if (process.argv[2].split('.').includes('log')) {
     fs.readFile(process.argv[2],"utf-8",function(err, data){
         if (err) {
-            return console.log(`
-    
-    -h == help or for how to use the CLI
-    [location your file] -t json == convert .log to .json
-    example : converter /var/log/nginx/error.log -t json
-
-    [location your file] -t text == convert .log to .txt
-    example: converter /var/log/nginx/error.log -t text
-    
-    [location your file] -o [output directory file] == to convert files and set the output location
-    example: converter /var/log/nginx/error.log -o /User/johnmayer/Desktop/nginxlog.txt
-
-    [location your file] -t json/text -o [output location file] == to convert the file according to the command and  set the output location
-    example: converter /var/log/nginx/error.log -t json -o /User/johnmayer/Desktop/nginxlog.json
-    example: converter /var/log/nginx/error.log -t text -o /User/johnmayer/Desktop/nginxlog.txt
-    `)
-            
+            return console.log(err)
         }
         // this convert to json
         if (process.argv[3] === "-t" && process.argv[4] === "json" && process.argv[5] === "-o" && process.argv[6].split('.').includes('json') === true) {
@@ -115,6 +99,7 @@ if (process.argv[2].split('.').includes('log')) {
                 console.log("The file was convert to json!")
             })
         }
+
         // convert to text
         else if (process.argv[3] === "-t" && process.argv[4] === "text" && process.argv[5] === "-o" && process.argv[6].split('.').includes('txt') === true) {
             const location = process.argv[6]
@@ -158,6 +143,8 @@ if (process.argv[2].split('.').includes('log')) {
                     console.log("The file was convert to text!")
                 })
         }
+
+        // convert log with output location directory
         else if (process.argv[3] === "-o" && process.argv[4].split('.').includes('txt') === true) {
             const location = process.argv[4]
             var lopping = location.split('/')

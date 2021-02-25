@@ -1,3 +1,5 @@
+<h1> CLI converter file.log to json or text(.txt)</h1>
+
 ### Installation
 1. Clone the repo
 ```sh
@@ -14,6 +16,16 @@ npm install
 4. run project
 ```
 converter
+```
+
+### default location
+1. json convert
+```
+in folder logs-json/
+```
+2. text convert
+```
+in folder logs-text/
 ```
 
 ### help
