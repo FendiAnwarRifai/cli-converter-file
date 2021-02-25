@@ -147,6 +147,44 @@ if (process.argv[2]) {
                 })
             }
         }
+        else if (process.argv[3] === "-o" && process.argv[4]) {
+            const location = process.argv[4]
+            var lopping = location.split('/')
+            var directory = []
+            for (var i = 0; i < lopping.length - 1; i++) {
+                directory.push(lopping[i])
+
+            }
+            dir = '.' + directory.join("/")
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir, {
+                    recursive: true
+                });
+            }
+            fs.writeFile('.' + location, data, function (err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log("The file was convert to text!")
+            })
+        }else{
+            return console.log(`
+    
+    -h == help or for how to use the CLI
+    [location your file] -t json == convert .log to .json
+    example : converter /var/log/nginx/error.log -t json
+
+    [location your file] -t text == convert .log to .txt
+    example: converter /var/log/nginx/error.log -t text
+    
+    [location your file] -o [output directory file] == to convert files and set the output location
+    example: converter /var/log/nginx/error.log -o /User/johnmayer/Desktop/nginxlog.txt
+
+    [location your file] -t json/text -o [output location file] == to convert the file according to the command and  set the output location
+    example: converter /var/log/nginx/error.log -t json -o /User/johnmayer/Desktop/nginxlog.json
+    example: converter /var/log/nginx/error.log -t text -o /User/johnmayer/Desktop/nginxlog.txt
+    `)
+        }
 
 })
 }
